@@ -9,7 +9,11 @@ while True:
         print('work')
         with open(host_temp,'r+') as file:
             content = file.read()
-            print(content)
+            for website in weblist:
+                if website in content:
+                    pass
+                else:
+                    file.write('\n'+redirect+' '+website)
     else:
         print('relax')
     time.sleep(6)
