@@ -7,7 +7,7 @@ weblist = ['www.facebook.com','facebook.com']
 while True:
     if dt(dt.now().year,dt.now().month,dt.now().day,8)<dt.now()<dt(dt.now().year,dt.now().month,dt.now().day,17):
         print('work')
-        with open(host_temp,'r+') as file:
+        with open(host,'r+') as file:
             content = file.read()
             for website in weblist:
                 if website in content:
@@ -16,7 +16,7 @@ while True:
                     file.write('\n'+redirect+' '+website)
     else:
         print('relax')
-        with open(host_temp,'r+') as file:
+        with open(host,'r+') as file:
             content = file.readlines()
             file.seek(0)
             for line in content:
